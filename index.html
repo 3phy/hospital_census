@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+    <div>
+        <button id="toggle-sidebar" class="toggle-button">
+            <box-icon name='menu'></box-icon>
+        </button>
+        
+        <nav class="sidebar" id="sidebar">
+            <header class="sidebar-header">
+                <span>Menu</span>
+            </header>
+            
+            <div class="menubar">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#" data-page="dashboard">
+                            <box-icon name='home-alt-2'></box-icon>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#" data-page="profile">
+                            <box-icon name='user'></box-icon>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#" data-page="settings">
+                            <box-icon name='cog'></box-icon>
+                            <span class="nav-text">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#" data-page="logout">
+                            <box-icon name='log-out'></box-icon>
+                            <span class="nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="content">
+            <!-- Default content (Dashboard) -->
+            <div class="bento-box">
+                <div class="bento-box-up">
+                    <button class="patient-btn"> + Add patient</button>
+                </div>
+                <div class="bento-box-down">
+                    <div class="left">In-Patient</div>
+                    <div class="right">Out-patient</div>
+                </div>
+                <div class="bento-box-side">
+                    <div class="Up">Graphs</div>
+                    <div class="Down">Analytics</div>
+                </div>
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

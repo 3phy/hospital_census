@@ -1,0 +1,244 @@
+body {
+
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px; /* Adjust width as needed */
+    height: 100%;
+    background-color: #ffffff; /* Sidebar background color */
+    position: fixed;
+    left: -250px; /* Hide sidebar off-screen */
+    transition: left 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.toggle-button {
+    position: fixed;
+    top: 26px;
+    left: 20px;
+    background-color: #99CC99;
+    border-radius: 10px;
+    color: white; /* Button text color */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure button is above other elements */
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #425342;
+    transition: opacity 0.3s ease;
+}
+
+.menubar {
+    flex-grow: 1;
+}
+
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link a {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2C3E50;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-link a:hover {
+    background: #99CC99;
+    color: #1A252F;
+}
+
+.content {
+    margin-left: 50px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: column;
+    transition: margin-left 0.3s ease;
+    z-index: -1;
+}
+
+.sidebar.active + .content {
+    margin-left: 250px;
+}
+
+.bento-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 10px;
+    width: 95vh;
+}
+
+.bento-box-up {
+    grid-column: span 2;
+    background: #99CC99;
+    padding: 20px;
+    display: flex;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1;
+    height: 60px;
+    width: 110vh;
+}
+
+.bento-box-down {
+    display: flex;
+    background: white;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    height: 570px;
+    width: 110vh;
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left, .right {
+    flex: 1;  
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bento-box-side {
+    display: grid;
+    flex-direction: column;
+    display: flex;
+    background: aliceblue;
+    padding: 20px;
+    flex: 1;
+    height: 92vh;
+    width: 44vh;
+    transform: translateY(-15%);
+}
+
+.Up, .Down {
+    height: 100%;
+    flex: 1;  
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.patient-btn {
+    border-radius: 25px;
+    width: 25vh;
+}
+
+/* Profile Page */
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white; /* Background color for profile page */
+    color: #2C3E50; /* Text color */
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-page h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-page p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.profile-page .patient-btn {
+    background-color: #99CC99;
+    color: #2C3E50;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-page .patient-btn:hover {
+    background-color: white;
+}
+
+/* Settings Page */
+.settings-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white; /* Background color for settings page */
+    color: #2C3E50; /* Text color */
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.settings-page h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.settings-page p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.settings-page .patient-btn {
+    background-color: #99CC99;
+    color: #2C3E50;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.settings-page .patient-btn:hover {
+    background-color: white;
+}
+
+
+@media (max-width: 768px) {
+    .bento-box {
+        flex: 1 1 100%;
+    }
+
+    .content {
+        margin-left: 0; /* Reset margin for mobile view */
+    }
+
+    .sidebar {
+        width: 200px; /* Adjust sidebar width for smaller screens */
+    }
+
+    .sidebar.active + .content {
+        margin-left: 200px; /* Adjust margin for smaller screens */
+    }
+}
